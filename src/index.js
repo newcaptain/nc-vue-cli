@@ -1,14 +1,10 @@
-// import other from './other';
-import _ from 'lodash';
+import Vue from 'vue';
+import Test from './test.vue';
 
-// function component() {
-//   const btn = document.createElement('button');
-//   btn.innerText = 'Click Me to run';
-//   btn.onclick = other;
-//   return btn;
-// }
+new Vue({
+  el: '#app',
+  render: h => h(Test)
+})
 
-// const { body } = document;
-// body.appendChild(component());
+console.log('index');
 
-const val = _.defaults({a: 10}, {a: 7, b: 7});
