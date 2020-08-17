@@ -14,7 +14,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
     new HtmlWebpackPlugin({
-      title: 'Hello nc-vue-cli',
+      title: '送给xxxx的樱花树',
       template: 'index.html'
     }),
     new VueLoaderPlugin(),
@@ -25,6 +25,7 @@ module.exports = {
   },
   devServer: {
     contentBase: './dist',
+    disableHostCheck: true
   },
   optimization: {
     splitChunks: {
@@ -47,8 +48,16 @@ module.exports = {
         use: [
           'vue-style-loader',
           'style-loader',
-          'css-loader',
+          'css-loader'
         ],
+      },
+      {
+        test: /\.styl(us)?$/,
+        use: [
+          'vue-style-loader',
+          'css-loader',
+          'stylus-loader'
+        ]
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
